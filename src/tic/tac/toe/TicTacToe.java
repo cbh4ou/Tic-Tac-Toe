@@ -1,21 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Main class
 package tic.tac.toe;
 
 /**
  *
  * @author Connor
  */
-public class TicTacToe {
 
-    /**
-     * @param args the command line arguments
-     */
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+
+public class TicTacToe extends JFrame {
+
+    public TicTacToe() {
+        
+        initUI();
+    }
+    
+    private void initUI() {
+        
+        add(new Game());
+        
+        setResizable(false);
+        pack();
+        
+        setTitle("TicTacToe");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        EventQueue.invokeLater(() -> {
+            JFrame ex = new TicTacToe();
+            ex.setVisible(true);
+        });
     }
     
 }
